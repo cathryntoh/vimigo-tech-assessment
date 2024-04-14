@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(AttendanceApp());
+  runApp(MyApp());
 }
 
 // data structure for attendance records
@@ -19,7 +19,7 @@ class AttendanceRecord {
   });
 }
 
-class AttendanceApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +50,7 @@ class AttendanceListScreenState extends State<AttendanceListScreen> {
 
   Future<void> _loadAttendanceRecords() async {
     // load text file contents
-    String data = await rootBundle.loadString('assets/dataset.txt');
+    String data = await rootBundle.loadString('./assets/dataset.txt');
 
     // parse data and populate the attendance records list
     List<dynamic> jsonList = json.decode(data);
